@@ -7,7 +7,24 @@ html
     link(rel='stylesheet', href='/stylesheets/fontawesome-all.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    block content
+    nav.navbar.fixed-top.navbar-toggleable-md.navbar-inverse
+      .container
+        button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarMain')
+          span.navbar-toggler-icon
+        a.navbar-brand(href='/') Where to Play
+        #navbarMain.navbar-collapse.collapse
+          ul.navbar-nav.mr-auto
+            li.nav-item
+              a.nav-link(href='/locations/') Places
+          ul.navbar-nav.mr-auto
+            li.nav-item
+              a.nav-link(href='/about/') About
+    .container
+      block content
+      footer
+        .row
+          .col-12
+            small &copy; Luis Amez 2018
     script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous")
     script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js')
     script(src='/javascripts/bootstrap.min.js')
