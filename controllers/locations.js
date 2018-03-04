@@ -1,6 +1,6 @@
 /* GET location list page */
 const locationList = (req, res) => {
-  res.render('index', { title: 'Location List' });
+  res.render('locations-list', { title: 'Locations List' });
 };
 
 /* GET location info page */
