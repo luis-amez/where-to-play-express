@@ -5,7 +5,7 @@ const locationList = (req, res) => {
 
 /* GET location info page */
 const locationInfo = (req, res) => {
-  res.render('index', { title: 'Location Info' });
+  res.render('location-info', { title: 'Location Info' });
 };
 
 /* GET add review page */
