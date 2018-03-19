@@ -1,59 +1,24 @@
 extends layout
+include _includes/sharedHTMLfunctions
 
 block content
   .row.banner
     .col-12
-      h1 Where to Play
-        small &nbsp;Share your love for board games!
+      h1= pageHeader.title
+        small &nbsp;#{pageHeader.strapline}
   .row
     .col-12.col-md-8
-      .card
-        .card-block
-          h4
-            a(href="/locations/123") Juegame Store
-            small &nbsp;
-              i.fa.fa-star
-              i.fa.fa-star
-              i.fa.fa-star
-              i.fa.fa-star-o
-              i.fa.fa-star-o
-            span.badge.badge-pill-badge-default.badge-warning.float-right 300m
-          p.address C/ Falsa, 123, Cullera
-          .facilities
-            span.badge.badge-warning Food
-            span.badge.badge-warning Store
-            span.badge.badge-warning Wi-Fi
-      .card
+      each location in locations
+        .card
           .card-block
             h4
-              a(href="/locations/123") Juegame Store
+              a(href="/locations/123")= location.name
               small &nbsp;
-                i.fa.fa-star
-                i.fa.fa-star
-                i.fa.fa-star
-                i.fa.fa-star-o
-                i.fa.fa-star-o
-              span.badge.badge-pill-badge-default.badge-warning.float-right 300m
-            p.address C/ Falsa, 123, Cullera
+                +outputRating(location.rating)
+              span.badge.badge-pill-badge-default.badge-warning.float-right= location.distance
+            p.address= location.address
             .facilities
-              span.badge.badge-warning Food
-              span.badge.badge-warning Store
-              span.badge.badge-warning Wi-Fi
-      .card
-          .card-block
-            h4
-              a(href="/locations/123") Juegame Store
-              small &nbsp;
-                i.fa.fa-star
-                i.fa.fa-star
-                i.fa.fa-star
-                i.fa.fa-star-o
-                i.fa.fa-star-o
-              span.badge.badge-pill-badge-default.badge-warning.float-right 300m
-            p.address C/ Falsa, 123, Cullera
-            .facilities
-              span.badge.badge-warning Food
-              span.badge.badge-warning Store
-              span.badge.badge-warning Wi-Fi
+              each facility in location.facilities
+                span.badge.badge-warning= facility
     .col-12.col-md-4
-      p.lead Do you want to play? Here you can find the most popular places in your city where the players meet.
+      p.lead= sidebar
