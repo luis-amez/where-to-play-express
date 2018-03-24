@@ -1,8 +1,9 @@
 extends layout
+
 block content
   .row.banner
     .col-12
-      h1 Review Juegamestore
+      h1= pageHeader.title
   .row
     .col-12.col-md-8
       form(action="/location", method="get", role="form")

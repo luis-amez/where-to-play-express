@@ -78,7 +78,14 @@ const locationInfo = (req, res) => {
 
 /* GET add review page */
 const addReview = (req, res) => {
-  res.render('location-review-form', { title: 'Add Review' });
+  const data = {
+    title: 'Review Juegamestore on Where to Play',
+    pageHeader: {
+      title: 'Review Juegamestore'
+    }
+  };
+
+  res.render('location-review-form', data);
 };
 
 module.exports = {
