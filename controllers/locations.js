@@ -27,7 +27,53 @@ const locationList = (req, res) => {
 
 /* GET location info page */
 const locationInfo = (req, res) => {
-  res.render('location-info', { title: 'Location Info' });
+  const data = {
+    title: 'Juegamestore',
+    pageHeader: {
+      title: 'Juegamestore'
+    },
+    sidebar: {
+      context: 'is on Where to Play because you can meet here people interested in playing board games. Now it\'s your turn.',
+      callToAction: 'If you\'ve been and you like it - or if you don\'t - please leave a review to help other people just like you.'
+    },
+    location: {
+      name: 'Juegamestore',
+      address: 'C/ Falsa, 123, Cullera',
+      rating: 5,
+      facilities: ['Food', 'Store', 'Wifi'],
+      coords: {
+        lat: 39.164499,
+        lng: -0.252616
+      },
+      openingTimes: [{
+        days: 'Monday - Friday',
+        opening: '15:00pm',
+        closing: '20:00pm',
+        closed: false
+      }, {
+        days: 'Saturday',
+        opening: '10:00am',
+        closing: '23:30pm',
+        closed: false
+      }, {
+        days: 'Sunday',
+        closed: true
+      }],
+      reviews: [{
+        author: 'Charlie',
+        rating: 5,
+        timestamp: '3 August 2017',
+        reviewText: 'Best place on earth. By far.'
+      }, {
+        author: 'Quintin',
+        rating: 3,
+        timestamp: '12 September 2017',
+        reviewText: 'It was okay. Not many games.'
+      }]
+    }
+  };
+
+  res.render('location-info', data);
 };
 
 /* GET add review page */
